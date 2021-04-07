@@ -63,7 +63,7 @@ In the second column of the grid result you can find the Cosine Similarity value
   <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 4.png?raw=true" alt="Coffe MIDI Step4"/>
 </p>
 
-You can also open a piano roll and see the MIDI content while playing 
+You can also open a piano roll and look at the MIDI content while playing 
 
 
 Hope you enjoy it !!
