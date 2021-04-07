@@ -1,6 +1,6 @@
 # CoffeMIDI
 
-### A MIDI content Based Recomandation System
+### A MIDI Content Based Recomandation System
 
 
 
