@@ -41,19 +41,19 @@ Create a music search and recommendation system that can be parameterized and is
 * Search a Song from the entire Dataset:
 
 <p align="center">
-  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step1.png?raw=true" alt="Coffe MIDI Step1" width="400" height="200"/>
+  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/start.png?raw=true" alt="Coffe MIDI Step1"/>
 </p>
 
 * Pick a Song to start playing with parameters:
 
 <p align="center">
-  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 2.png?raw=true" alt="Coffe MIDI Step2" width="400" height="200"/>
+  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 2.png?raw=true" alt="Coffe MIDI Step2"/>
 </p>
 
 * Move the parameters to discover how recomendations start to change:
 
 <p align="center">
-  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 3.png?raw=true" alt="Coffe MIDI Step3" width="400" height="200"/>
+  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 3.png?raw=true" alt="Coffe MIDI Step3"/>
 </p>
 
 Tn the second column you will see tha Cosine Similarity between the picked song and the closest ones in the Database. You can Also click on the 'Search' button to change the picked theme.
