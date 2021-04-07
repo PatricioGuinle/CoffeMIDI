@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Coffe MIDI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width", initial-scale="1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="estilos.css">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+
+<body>
+<!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="w3-container w3-red w3-center" style="padding: 58px 16px;">
+    <h1 class="w3-margin w3-jumbo">Coffe MIDI v1</h1>
+    <p class="w3-xlarge">Developed by Patricio Guinle</p>
+    <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
+  </header>
+
+  <!-- Second Grid -->
+  <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+        <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+      </div>
+
+      <div class="w3-twothird">
+        <h1>Coffe MIDI</h1>
+        <label class="select_song_lbl" for="vol">Select a song</label>
+        <input type="text" id="tema" name="tema" value="" placeholder="Search by theme, artist, style...">
+        <form action="/action_page.php" style="display:none">
+          <div class="range">
+            <label for="vol">instrumentation</label>
+            <input type="range" id="instrumentacion" name="instrumentacion" min="0" max="10" value="1">
+          </div>
+          <div class="range">
+            <label for="vol">drums rythm</label>
+            <input type="range" id="ritmica_drums" name="ritmica_drums" min="0" max="15" value="5">
+          </div>
+          <div class="range">
+            <label for="vol">instruments rythm</label>
+            <input type="range" id="ritmica_instrument" name="ritmica_instrument" min="0" max="15" value="5">
+          </div>
+          <div class="range">
+            <label for="vol">tonal range</label>
+            <input type="range" id="amplitud_tonal" name="amplitud_tonal" min="0" max="10" value="1">
+          </div>
+          <div class="range">
+            <label for="vol">dynamics</label>
+            <input type="range" id="dinamica" name="dinamica" min="0" max="10" value="1">
+          </div>
+          <div class="range">
+            <label for="vol">notes duration</label>
+            <input type="range" id="duracion_notas" name="duracion_notas" min="0" max="10" value="1">
+          </div>
+          <div class="range">
+            <label for="vol">theme duration</label>
+            <input type="range" id="duracion_tema" name="duracion_tema" min="0" max="100" value="1">
+          </div>
+          <div class="range">
+            <label for="vol">simult. notes</label>
+            <input type="range" id="notas_simultaneas" name="notas_simultaneas" min="0" max="10" value="1">
+          </div>
+          <div class="range">
+            <label for="vol">tempo</label>
+            <input type="range" id="tempo" name="tempo" min="0" max="10" value="1">
+          </div>
+          <div class="range">
+            <label for="vol">harmony</label>
+            <input type="range" id="armonia" name="armonia" min="0" max="5" value="1">
+          </div>
+          <div class="range">
+            <label for="vol">others</label>
+            <input type="range" id="others" name="others" min="0" max="10" value="1">
+          </div>
+          <div class="range">
+            <label for="vol">penalization</label>
+            <input type="range" id="penalizacion" name="penalizacion" min="0" max="10" value="1">
+          </div>
+          <div class="range range check first">
+            <input type="checkbox" id="filtrar" name="vehicle1" value="True">
+            <label for="vehicle1">filter parameters</label><br>
+          </div>
+          <div class="range check">
+            <input type="checkbox" id="clusterizar" name="vehicle1" value="True">
+            <label for="vehicle1">clusterization</label><br>
+          </div>
+        </form>
+        
+        <div id="visualizer_container" style="display: none;" class="hidden">
+          <midi-player id="midi_player"
+            src=""
+            sound-font visualizer="#myPianoRollVisualizer">
+          </midi-player>
+          <div id="hide_visualizer_btn" ></div>
+          <midi-visualizer style="display:none;" type="piano-roll" id="myPianoRollVisualizer" 
+            src="">
+          </midi-visualizer>
+        </div>
+
+        <h5 class="w3-padding-32"></h5>
+        <ol id="resultados"></ol>
+        <div id="pager" style="display:none;"><button onclick="pageDown()">&lt;</button><label class="page">1</label><button onclick="pageUp()">&gt;</button></div>
+        <p class="w3-text-grey" id="listening"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: listen good music and take some coffe</h1>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+    <div class="w3-xlarge w3-padding-32">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.21.0/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.1.1"></script>
+  <script src="scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+number;num_mid;intrument;intrument_subcat;intrument_cat
+1;0;Acoustic Grand Piano;Piano;Piano
+2;1;Bright Acoustic Piano;Piano;Piano
+3;2;Electric Grand Piano;Electric Piano;Piano
+4;3;Honky tonk Piano;Honky Piano;Piano
+5;4;Rhodes Piano;Electric Piano;Piano
+6;5;Chorused Electric Piano;Electric Piano;Piano
+7;6;Harpsichord;Harpsicord;Piano
+8;7;Clavinet;Clavinet;Piano
+9;8;Celesta;Celesta;Percusion
+10;9;Glockenspiel;Glockenspiel;Percusion
+11;10;Music Box;Music Box;Percusion
+12;11;Vibraphone;Vibraphone;Percusion
+13;12;Marimba;Marimba;Percusion
+14;13;Xylophone;Xylophone;Percusion
+15;14;Tubular Bells;Tubular Bells;Percusion
+16;15;Dulcimer/Santur;Dulcimer/Santur;Percusion
+17;16;Hammond Organ;Hammond Organ;Organ
+18;17;Percussive Organ;Percussive Organ;Organ
+19;18;Rock Organ;Rock Organ;Organ
+20;19;Church Organ 1;Church Organ 1;Organ
+21;20;Reed Organ;Reed Organ;Organ
+22;21;French Accordion;French Accordion;Accordion
+23;22;Harmonica;Harmonica;Harmonica
+24;23;Bandoneon;Bandoneon;Bandoneon
+25;24;Nylon;Nylon;Guitar
+26;25;Steel Guitar;Steel Guitar;Guitar
+27;26;Jazz Guitar;Jazz Guitar;Guitar
+28;27;Clean Electric Guitar;Clean Electric Guitar;Guitar
+29;28;Muted Electric Guitar;Muted Electric Guitar;Guitar
+30;29;Overdriven Guitar;Overdriven Guitar;Guitar
+31;30;Distortion Guitar;Distortion Guitar;Guitar
+32;31;Guitar Harmonics;Guitar Harmonics;Guitar
+33;32;Acoustic Bass;Acoustic Bass;Bass
+34;33;Fingered Bass;Fingered Bass;Bass
+35;34;Picked Bass;Picked Bass;Bass
+36;35;Fretless Bass;Fretless Bass;Bass
+37;36;Slap Bass 1;Slap;Bass
+38;37;Slap Bass 2;Slap;Bass
+39;38;Synth Bass 1;Synth;Bass
+40;39;Synth Bass 2;Synth;Bass
+41;40;Violin;Strings;Strings
+42;41;Viola;Strings;Strings
+43;42;Cello;Strings;Strings
+44;43;Contrabass;Strings;Strings
+45;44;Tremolo Strings;Strings;Strings
+46;45;Pizzicato Strings;Strings;Strings
+47;46;Harp;Harp;Strings
+48;47;Timpani;Timpani;Strings
+49;48;String Ensemble;String ensamble;Strings
+50;49;Slow String Ensemble;String ensamble;Strings
+51;50;Synth Strings 1;String ensamble;Strings
+52;51;Synth Strings 2;String ensamble;Strings
+53;52;Choir Aahs;Vocals;Vocals
+54;53;Voice Oohs;Vocals;Vocals
+55;54;Synth Voice;Vocals;Vocals
+56;55;Orchestra Hit;Orchestra Hit;Orchestra Hit
+57;56;Trumpet;Trumpet;Brass
+58;57;Trombone;Trombone;Brass
+59;58;Tuba;Tuba;Brass
+60;59;Muted Trumpet;Muted Trumpet;Brass
+61;60;French Horn;French Horn;Brass
+62;61;Brass Section;Brass Section;Brass
+63;62;Synth Brass 1;Synph Brass;Brass
+64;63;Synth Brass 2;Synph Brass;Brass
+65;64;Soprano Sax;Sax;Reed
+66;65;Alto Sax;Sax;Reed
+67;66;Tenor Sax;Sax;Reed
+68;67;Baritone Sax;Sax;Reed
+69;68;Oboe;Oboe;Reed
+70;69;English Horn;English Horn;Reed
+71;70;Bassoon;Bassoon;Reed
+72;71;Clarinet;Clarinet;Reed
+73;72;Piccolo;Piccolo;Flute
+74;73;Flute;Flute;Flute
+75;74;Recorder;Recorder;Flute
+76;75;Pan Flute;Pan Flute;Flute
+77;76;Blown Bottle;Blown Bottle;Flute
+78;77;Shakuhachi;Shakuhachi;Flute
+79;78;Whistle;Whistle;Flute
+80;79;Ocarina;Ocarina;Flute
+81;80;Square Lead;Lead;Lead
+82;81;Saw Lead;Lead;Lead
+83;82;Synth Calliope;Lead;Lead
+84;83;Chiffer Lead;Lead;Lead
+85;84;Charang;Lead;Lead
+86;85;Solo Synth Vox;Lead;Lead
+87;86;5th Saw Wave;Lead;Lead
+88;87;Bass & Lead;Lead;Lead
+89;88;Fantasia Pad;Synth;Synth
+90;89;Warm Pad;Synth;Synth
+91;90;Polysynth Pad;Synth;Synth
+92;91;Space Voice Pad;Synth;Synth
+93;92;Bowed Glass Pad;Synth;Synth
+94;93;Metal Pad;Synth;Synth
+95;94;Halo Pad;Synth;Synth
+96;95;Sweep Pad;Synth;Synth
+97;96;Ice Rain;Effects;Synth Effects
+98;97;Soundtrack;Effects;Synth Effects
+99;98;Crystal;Effects;Synth Effects
+100;99;Atmosphere;Effects;Synth Effects
+101;100;Brightness;Effects;Synth Effects
+102;101;Goblin;Effects;Synth Effects
+103;102;Echo Drops;Effects;Synth Effects
+104;103;Star Theme;Effects;Synth Effects
+105;104;Sitar;Sitar;Guitar
+106;105;Banjo;Banjo;Guitar
+107;106;Shamisen;Shamisen;Guitar
+108;107;Koto;Koto;Ethnic
+109;108;Kalimba;Kalimba;Ethnic
+110;109;Bagpipe;Bagpipe;Ethnic
+111;110;Fiddle;Fiddle;Ethnic
+112;111;Shanai;Shanai;Ethnic
+113;112;Tinkle Bell;Tinkle Bell;Percussive
+114;113;Agogo;Agogo;Percussive
+115;114;Steel Drums;Steel Drums;Percussive
+116;115;Woodblock;Woodblock;Percussive
+117;116;Taiko Drum;Taiko Drum;Percussive
+118;117;Melodic Tom 1;Melodic Tom 1;Percussive
+119;118;Synth Drum;Synth Drum;Percussive
+120;119;Reverse Cymbal;Reverse Cymbal;Percussive
+121;120;Guitar Fret Noise;Guitar noise;Effects
+122;121;Breath Noise;Effects;Effects
+123;122;Seashore;Effects;Effects
+124;123;Bird Tweet;Effects;Effects
+125;124;Telephone 1;Effects;Effects
+126;125;Helicopter;Effects;Effects
+127;126;Applause;Effects;Effects
+128;127;Gun Shot;Effects;Effects
