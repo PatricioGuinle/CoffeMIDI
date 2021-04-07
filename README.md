@@ -3,7 +3,7 @@
 ## A MIDI content Based Recomandation System
 
 <p align="center">
-  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/start.png?raw=true" alt="Coffe MIDI" width="400" height="200"/>
+  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/start.png?raw=true" alt="Coffe MIDI"/>
 </p>
 
 ## Autor:
@@ -41,7 +41,7 @@ Create a music search and recommendation system that can be parameterized and is
 * Search a Song from the entire Dataset:
 
 <p align="center">
-  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step1.png?raw=true" alt="Coffe MIDI Step1" style="width:80%;height:auto;" />
+  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step1.png?raw=true" alt="Coffe MIDI Step1"/>
 </p>
 
 * Pick a Song to start playing with parameters:
@@ -61,7 +61,7 @@ Tn the second column you will see tha Cosine Similarity between the picked song 
 * Start playing results to evaluate the quality of recomendations:
 
 <p align="center">
-  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 4.png?raw=true" alt="Coffe MIDI Step4" width="400" height="200"/>
+  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 4.png?raw=true" alt="Coffe MIDI Step4"/>
 </p>
 
 You can also open a piano roll and see the MIDI content while playing 
