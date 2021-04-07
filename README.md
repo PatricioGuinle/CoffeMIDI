@@ -3,7 +3,7 @@
 ## A MIDI content Based Recomandation System
 
 <p align="center">
-  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step1.png?raw=true" alt="Coffe MIDI" width="400" height="200"/>
+  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/start.png?raw=true" alt="Coffe MIDI" width="400" height="200"/>
 </p>
 
 ## Autor:
@@ -41,7 +41,7 @@ Create a music search and recommendation system that can be parameterized and is
 * Search a Song from the entire Dataset:
 
 <p align="center">
-  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/start.png?raw=true" alt="Coffe MIDI Step1"/>
+  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step1.png?raw=true" alt="Coffe MIDI Step1" style="width:80%;height:auto;" />
 </p>
 
 * Pick a Song to start playing with parameters:
