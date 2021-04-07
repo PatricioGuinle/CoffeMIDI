@@ -16,7 +16,7 @@
 
 ## Motivation 
 
-Create a music search and recommendation system that can be parameterized and is based on the similarity with respect to the musical characteristics of each song.
+To create a music search and recommendation system based on the similarity of musical characteristics that can be parameterized.
 
 
 ## Dataset 
