@@ -64,3 +64,6 @@ In the second column of the grid result you can find the Cosine Similarity value
 </p>
 
 You can also open a piano roll and see the MIDI content while playing 
+
+
+Hope you enjoy it !!
