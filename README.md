@@ -2,9 +2,7 @@
 
 ## A MIDI content Based Recomandation System
 
-<p align="center">
-  <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/start.png?raw=true" alt="Coffe MIDI"/>
-</p>
+
 
 ## Autor:
 ##### Patricio Guinle
