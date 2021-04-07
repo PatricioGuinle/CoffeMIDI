@@ -55,7 +55,7 @@ To create a music search and recommendation system based on the similarity of mu
   <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 3.png?raw=true" alt="Coffe MIDI Step3"/>
 </p>
 
-Tn the second column you will see tha Cosine Similarity between the picked song and the closest ones in the Database. You can Also click on the 'Search' button to change the picked theme.
+In the second column of the grid result you can find the Cosine Similarity value between the picked song and the closest ones in the Database. You can Also click on the 'Search' button to change the picked theme.
 
 * Start playing results to evaluate the quality of recomendations:
 
