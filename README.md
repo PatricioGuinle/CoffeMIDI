@@ -38,7 +38,7 @@ To create a music search and recommendation system based on the similarity of mu
 * tempo
 * harmony
 
-## Steps 
+## Web APP Usage
 
 * Use the box to search by Artist, Music Genre or Theme name:
 
