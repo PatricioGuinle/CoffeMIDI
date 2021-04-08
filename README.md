@@ -15,9 +15,13 @@ To create a music search and recommendation system based on the similarity of mu
 
 ## Main Notebooks
 
-* HOST : [(Notebook)](https://github.com/PatricioGuinle/CoffeMIDI/blob/main/HOST.ipynb)
+* HOST: [(Notebook)](https://github.com/PatricioGuinle/CoffeMIDI/blob/main/HOST.ipynb)
 * CLIENT: [(Notebook)](https://github.com/PatricioGuinle/CoffeMIDI/blob/main/CLIENT.ipynb)
 * DATASET GENERATOR: [(Notebook)](https://github.com/PatricioGuinle/CoffeMIDI/blob/main/Dataset_Generator.ipynb)
+
+## Core Functions
+
+* COMMONS: [(common.py)]https://github.com/PatricioGuinle/CoffeMIDI/blob/main/commons.py)
 
 ## Dataset 
 
