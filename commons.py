@@ -55,7 +55,6 @@ def get_theme_df(mid):
     dict_time_signature_count = 0    
     ticks = mid.ticks_per_beat
     ticks_quantify = round(ticks / 8)
-
     for track in mid.tracks:
         track_number = 0
         track_name = track.name + str(n_track)
@@ -96,7 +95,6 @@ def get_theme_df(mid):
                         tempo_changes = 1
                     tempo = msg.tempo
                     bpm = round(500000*120/msg.tempo,0) 
-    
     avg_notes_quantified = count_notes_quantified / count_notes    
     tema_df = pd.DataFrame.from_dict(dict_notes, "index")
     max_note = tema_df.start.max() + ticks_quantify
@@ -104,7 +102,6 @@ def get_theme_df(mid):
     tema_df_notes_end = pd.DataFrame.from_dict(dict_notes_end, "index")
     df_time_signature = pd.DataFrame.from_dict(dict_time_signature, "index")       
     df_time_quantify = pd.DataFrame(range(0,int(max_note),int(ticks_quantify)), columns=['start'])
-
     ## Agrega time signature a tema_df
     for index, row in df_time_signature.iterrows():
         row_start = row.start
@@ -121,7 +118,6 @@ def get_theme_df(mid):
     controls = controls[controls > 10].sum() / n_tracks_used
     return tema_df_merged, controls, key_signatures, time_signatures, n_tracks_used, tempo, bpm, tempo_changes, avg_notes_quantified                  
 
-
 def limit_outlyer_duration_notes(tema_df):
     notes_weight = pd.cut(tema_df.duration, 6)
     outlyeras_duration = pd.DataFrame(tema_df.duration.quantile([0.05,0.95]))
@@ -131,7 +127,6 @@ def limit_outlyer_duration_notes(tema_df):
     tema_df.loc[mask_outlyers_higher,'duration'] = outlyeras_duration.duration[0.95]
     notes_weight = pd.cut(tema_df.duration, 6)
     return tema_df
-
 
 def get_theme_stats(file_path, file_name):
     ## Instancia el archivo midi
@@ -287,8 +282,7 @@ def get_theme_stats(file_path, file_name):
                            tabla_esacla.iloc[0,1], tabla_esacla.iloc[1,1], tabla_esacla.iloc[2,1], 
                            tabla_esacla.iloc[3,1], tabla_esacla.iloc[4,1], tabla_esacla.iloc[5,1], 
                            tabla_esacla.iloc[6,1] if tabla_esacla.shape[0] > 6 else 0, avr_vertical_notes,cant_eventos_por_pedal,
-                           cant_pedales_seg,duracion_tema,n_tracks_used,file_path,file_name]
-      
+                           cant_pedales_seg,duracion_tema,n_tracks_used,file_path,file_name]    
     tema_describe = tema_df.describe()
     data_describe = pd.DataFrame(tema_describe.loc[tema_describe.index != 'count',['note_num','Octave','duration']].unstack())
     data_describe.reset_index(inplace=True)
@@ -304,7 +298,6 @@ def get_theme_stats(file_path, file_name):
     df_final = pd.concat([music_stats.T,df_sim_notes_by_instrument, instrumentos_por_seg, data_describe,velocity_avg,length_notes_avg, df_compas, head_chord_series]) 
     return df_final
 
-
 def get_midi_from_path():
     path_midi = 'GET_FILE'
     # the dictionary to pass to pandas dataframe
@@ -317,7 +310,6 @@ def get_midi_from_path():
     df_files_analize = pd.DataFrame.from_dict(dict, "index").iloc[0,:]
     display(df_files_analize)
     return get_theme_stats(df_files_analize.file, df_files_analize.file_name).T  
-
 
 def cosine_similarity_row(X__sc, vec_a,indice):
     vec_b = X__sc
