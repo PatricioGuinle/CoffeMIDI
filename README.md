@@ -22,7 +22,7 @@ To create a music search and recommendation system based on the similarity of mu
 
 ## Dataset 
 
-### Contains more than 500 parameters from almost 90k MIDI files divided in: 
+### Contains over 500 parameters from almost 90k MIDI files divided in: 
 
 * instrumentation
 * drums rythm
