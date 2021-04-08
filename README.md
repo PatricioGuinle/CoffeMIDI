@@ -21,7 +21,7 @@ To create a music search and recommendation system based on the similarity of mu
 
 ## Core Functions
 
-* COMMONS: [(common.py)]https://github.com/PatricioGuinle/CoffeMIDI/blob/main/commons.py)
+* COMMONS: [(common.py)](https://github.com/PatricioGuinle/CoffeMIDI/blob/main/commons.py)
 
 ## Dataset 
 
