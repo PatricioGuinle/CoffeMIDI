@@ -9,16 +9,15 @@
 ## Autor:
 Patricio Guinle
 
+## Motivation 
+
+To create a music search and recommendation system based on the similarity of musical characteristics that can be parameterized.
+
 ## Main Notebooks
 
 * HOST : [(Notebook)](https://github.com/PatricioGuinle/CoffeMIDI/blob/main/HOST.ipynb)
 * CLIENT: [(Notebook)](https://github.com/PatricioGuinle/CoffeMIDI/blob/main/CLIENT.ipynb)
 * DATASET GENERATOR: [(Notebook)](https://github.com/PatricioGuinle/CoffeMIDI/blob/main/Dataset_Generator.ipynb)
-
-## Motivation 
-
-To create a music search and recommendation system based on the similarity of musical characteristics that can be parameterized.
-
 
 ## Dataset 
 
