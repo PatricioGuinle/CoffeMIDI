@@ -37,13 +37,13 @@ To create a music search and recommendation system based on the similarity of mu
 
 ## Steps 
 
-* Search a Song from the entire Dataset:
+* Search an Artist, Theme or music Style:
 
 <p align="center">
   <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step1.png?raw=true" alt="Coffe MIDI Step1"/>
 </p>
 
-* Pick a Song to start playing with parameters:
+* Select a Song to start playing with parameters:
 
 <p align="center">
   <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 2.png?raw=true" alt="Coffe MIDI Step2"/>
