@@ -37,13 +37,12 @@ To create a music search and recommendation system based on the similarity of mu
 
 ## Steps 
 
-```
 * Use the box to search by Artist, Music Genre or Theme name:
 
 <p align="center">
   <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step1.png?raw=true" alt="Coffe MIDI Step1"/>
 </p>
-```
+
 * Pick a Song between the results list:
 
 <p align="center">
