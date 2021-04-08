@@ -37,19 +37,19 @@ To create a music search and recommendation system based on the similarity of mu
 
 ## Steps 
 
-* Search an Artist, Theme or music Style:
+* Search by Artist, Music Genre or Theme name:
 
 <p align="center">
   <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step1.png?raw=true" alt="Coffe MIDI Step1"/>
 </p>
 
-* Select a Song to start playing with parameters:
+* Pick a Song between the results list:
 
 <p align="center">
   <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 2.png?raw=true" alt="Coffe MIDI Step2"/>
 </p>
 
-* Move the parameters to discover how recomendations start to change:
+* Start to play with some musical parameters to discover how recomendations begin to be adjusted by them:
 
 <p align="center">
   <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 3.png?raw=true" alt="Coffe MIDI Step3"/>
@@ -57,7 +57,7 @@ To create a music search and recommendation system based on the similarity of mu
 
 In the second column of the grid result you can find the Cosine Similarity value between the picked song and the closest ones in the Database. You can Also click on the 'Search' button to change the picked theme.
 
-* Start playing results to evaluate the quality of recomendations:
+* Click listen the results in order to evaluate the quality of recomendations:
 
 <p align="center">
   <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 4.png?raw=true" alt="Coffe MIDI Step4"/>
