@@ -6,7 +6,7 @@
 
 [http://coffemidi.com.ar/](http://coffemidi.com.ar/)
 
-## Autor:
+## Author:
 Patricio Guinle
 
 ## Motivation 
