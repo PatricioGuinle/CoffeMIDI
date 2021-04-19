@@ -52,7 +52,7 @@ To create a music search and recommendation system based on the similarity of mu
   <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 2.png?raw=true" alt="Coffe MIDI Step2"/>
 </p>
 
-* Start to play with some musical parameters to discover how recomendations begin to be adjusted by them:
+* Start playing with some musical parameters to discover how recomendations begin to be adjusted by them:
 
 <p align="center">
   <img src="https://github.com/PatricioGuinle/CoffeMIDI/blob/main/readme%20img/step 3.png?raw=true" alt="Coffe MIDI Step3"/>
