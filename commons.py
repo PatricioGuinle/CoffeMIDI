@@ -6,6 +6,8 @@ import numpy as np
 import plotly.express as px
 import math
 import os
+import pickle  
+from sklearn.preprocessing import StandardScaler
 
 ROOT = ""
 
@@ -146,7 +148,8 @@ def get_theme_stats(file_path, file_name):
     tema_df.loc[:,'duration'] = tema_df.end - tema_df.start
     ## Agregamos informacion de instrumentos y batería
     tema_df = pd.merge(tema_df, midi_instruments,how='left',left_on='track_name',right_on='num_mid').drop('num_mid',axis=1)
-    tema_df.loc[tema_df.channel == 9,['intrument_subcat']] = tema_df[tema_df.channel == 9].note_num.apply(lambda x: midi_drum_sounds_dict[x])
+    tema_df.loc[tema_df.channel == 9,['intrument_subcat']] = tema_df[tema_df.channel == 9].note_num.apply(lambda x: 'dd_' + midi_drum_sounds_dict[x])
+    tema_df.loc[tema_df.channel != 9,['intrument_subcat']] = "ii_" + tema_df.loc[tema_df.channel != 9,['intrument_subcat']]
     tema_df.loc[tema_df.channel == 9,['intrument_cat']] = 'Drums'
     ## Genera un frame agrupando golpes x el momento del compas
     cant_compases = math.trunc(tema_df.compas_num.max()) + 1
@@ -194,6 +197,7 @@ def get_theme_stats(file_path, file_name):
     avr_vertical_notes = tema_df.note_simultaneous.sum() / notas_totales
     cant_pedal_sustain = controls
     cant_eventos_por_pedal = cant_eventos_piano / cant_pedal_sustain if cant_pedal_sustain > 5 else np.NaN
+    cant_eventos_por_pedal = cant_eventos_por_pedal if cant_eventos_por_pedal < 9999 else np.NaN
     cant_pedales_seg = cant_pedal_sustain / duracion_tema if cant_pedal_sustain > 5 else np.NaN
     #obtiene informacion de la escala
     nombre_escala = pd.merge(most_probable_scale, midi_scales_chords, how='left', left_on='index', right_on='note_name')
@@ -218,7 +222,7 @@ def get_theme_stats(file_path, file_name):
             tonalidad =  dict_keys[key_signatures[0]]
         else:
             tonalidad = key_signatures[0]
-        midi_scales_chords_weighted = pd.merge(midi_scales_chords[['note_name', tonalidad]], all_values_notes, how='left', left_on='note_name', right_on='index',)
+        midi_scales_chords_weighted = pd.merge(midi_scales_chords[['note_name', tonalidad]], all_values_notes, how='left', left_on='note_name', right_on='index')
         midi_scales_chords_weighted.drop('index',axis=1,inplace=True)
         midi_scales_chords_weighted.columns = ['note_name', 'scale', 'weight']
         midi_scales_chords_weighted.set_index(midi_scales_chords_weighted.columns[1],inplace=True,drop=False)
@@ -270,19 +274,17 @@ def get_theme_stats(file_path, file_name):
     cant_dist_chords = len(chords_series)        
     df_sim_notes_by_instrument = pd.DataFrame.from_dict(dict_sim_notes_by_instrument_cat, "index")
     ## crea el Music stats    
-    music_stats = pd.DataFrame(columns=['first_time_signature', 'cant_time_signatures', 'bpm', 'compases', 'cant_dist_chords',
-                                        'avg_notes_quantified', 'tempo_changes', 'tonalidad',
-                                        'tonalidad_escala','scale_coverage','mayor_chord_coverage','minor_chord_coverage',
+    music_stats = pd.DataFrame(columns=["time_signature_" + time_signatures[0], 'time_signature_cant', 'bpm', 'compases', 'cant_dist_chords',
+                                        'avg_notes_quantified', 'tempo_changes','scale_coverage','mayor_chord_coverage','minor_chord_coverage',
                                           'scale_note_avg_1','scale_note_avg_2','scale_note_avg_3','scale_note_avg_4',
                                         'scale_note_avg_5','scale_note_avg_6','scale_note_avg_7', 'avr_simult_notes',
-                                        'cant_eventos_por_pedal', 'cant_pedales_seg','duracion_seg','tracks_used','path','tema'])
-    music_stats.loc[0] = [time_signatures[0], len(time_signatures), bpm, cant_compases, 
-                          cant_dist_chords, avg_notes_quantified, tempo_changes, tonalidad, 
-                          tonalidad_escala, scale_coverage,  mayor_chord_coverage, minor_chord_coverage, 
+                                        'cant_eventos_por_pedal', 'cant_pedales_seg','duracion_seg','tracks_used','indice','Cluster'])
+    music_stats.loc[0] = [1, len(time_signatures), bpm, cant_compases, cant_dist_chords, 
+                          avg_notes_quantified, tempo_changes, scale_coverage,  mayor_chord_coverage, minor_chord_coverage, 
                            tabla_esacla.iloc[0,1], tabla_esacla.iloc[1,1], tabla_esacla.iloc[2,1], 
                            tabla_esacla.iloc[3,1], tabla_esacla.iloc[4,1], tabla_esacla.iloc[5,1], 
                            tabla_esacla.iloc[6,1] if tabla_esacla.shape[0] > 6 else 0, avr_vertical_notes,cant_eventos_por_pedal,
-                           cant_pedales_seg,duracion_tema,n_tracks_used,file_path,file_name]    
+                           cant_pedales_seg,duracion_tema,n_tracks_used,file_path, 0]    
     tema_describe = tema_df.describe()
     data_describe = pd.DataFrame(tema_describe.loc[tema_describe.index != 'count',['note_num','Octave','duration']].unstack())
     data_describe.reset_index(inplace=True)
@@ -316,3 +318,81 @@ def cosine_similarity_row(X__sc, vec_a,indice):
     cosine_list =cosine_similarity([vec_a], vec_b).reshape(-1)
     similarity = pd.Series(cosine_list,index=indice).sort_values(ascending=False)
     return similarity
+
+def SaveAllFiles(dict, files_path):
+    print('SAVING!!')
+    data_midi = pd.DataFrame.from_dict(dict, "index")   
+    keep_columns = (data_midi.isnull().sum() / data_midi.shape[0]) <= 0.98
+    data_midi = data_midi.loc[:,keep_columns]
+    data_midi.rename(lambda x: "".join(str(x)).replace('\'','') if isinstance(x, tuple) else x.replace('\'',''), axis='columns', inplace=True)
+    data_midi.indice = data_midi.indice.apply(lambda x: x.replace(files_path + '\\', ""))
+
+    data_midi.set_index(data_midi.indice,inplace=True,drop=False)
+    data_index = data_midi[['indice', 'Cluster']]
+
+    data_midi.fillna(0, inplace=True)
+    X=data_midi.drop(['indice','Cluster'],axis=1)
+    data_midi.index
+
+    sc = StandardScaler()
+    sc.fit(X)
+    X__sc = sc.transform(X)
+    del data_midi
+
+    df_scaled = pd.DataFrame(X__sc,columns=X.columns)
+    df_scaled.set_index(data_index['indice'],inplace=True)
+    df_scaled['Cluster'] = data_index['Cluster']
+    data_index['indice_lower_search'] = data_index['indice'].apply(lambda x: x.lower().replace('-',' ').replace('_',' '))
+    data_index['indice_lower'] = data_index['indice'].apply(lambda x: x.lower())
+    del data_index['Cluster']
+
+    group_columns = {'ii_':'ritmica_instrument', 
+                     'dd_': 'ritmica_drums', 
+                     'inst_':'instrumentacion', 
+                     'describe_note_num_':'amplitud_tonal',
+                     'velocity_cat_':'dinamica',
+                     'describe_duration_':'duracion_notas1',
+                     'length_note_':'duracion_notas2',
+                     'avg_simult_':'notas_simultaneas', 
+                     'bpm':'tempo',
+                     'duracion_seg':'duracion_tema', 
+                     'scale_note_avg_':'armonia1',
+                     '_coverage':'armonia2',
+                     'scale_coverage':'armonia3', 
+                     'chord_':'armonia4'}
+
+    dict_columns_groups = {}
+    for column_grup in group_columns.keys():
+        arr_column_group = []  
+        for column_name in df_scaled.columns:
+            if (isinstance(column_name, tuple)):
+                if (column_name[0].find(column_grup) != -1):
+                    arr_column_group.append(column_name)
+            elif (column_name.find(column_grup) != -1 and column_grup != 'ii_'  and column_grup != 'dd_'):
+                arr_column_group.append(column_name)
+        dict_columns_groups[group_columns[column_grup]] = arr_column_group
+
+    colums_categorized = []
+    for keys in dict_columns_groups:
+        for values in dict_columns_groups[keys]:
+            colums_categorized.append(values)
+
+    columns_not_categorized = []
+    for col in df_scaled.columns:
+        if col not in colums_categorized:
+            columns_not_categorized.append(col)
+
+    columns_not_categorized.remove('Cluster')
+
+    with open('dist/dict_columns_groups.pkl', 'wb') as wb_pkl:
+        pickle.dump(dict_columns_groups, wb_pkl) 
+
+    with open('dist/columns_not_categorized.pkl', 'wb') as wb_pkl:
+        pickle.dump(columns_not_categorized, wb_pkl) 
+
+    with open('dist/sc.pkl', 'wb') as wb_pkl:
+        pickle.dump(sc, wb_pkl) 
+
+    df_scaled.to_csv('df_scaled.csv')
+    data_index.to_csv('data_index.csv')
+    print('SAVED!!')
