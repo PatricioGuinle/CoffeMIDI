@@ -38,6 +38,15 @@ To create a music search and recommendation system based on the similarity of mu
 * tempo
 * harmony
 
+## How to use
+
+* Clone the repository with **git clone https://github.com/PatricioGuinle/CoffeMIDI.git**
+* Install the requierements from [requirements.txt](https://github.com/PatricioGuinle/CoffeMIDI/blob/main/requirements.txt) 
+* Optional: Replace the example MIDI files into [FULL_MIDI path](https://github.com/PatricioGuinle/CoffeMIDI/tree/main/FULL_MIDI) and run the **dataset generator**
+* write the command line **python app.py**
+* Open the front view in browser [/Front/front.html](https://github.com/PatricioGuinle/CoffeMIDI/blob/main/Front/front.html) 
+* You're ready to play
+
 ## Web APP Usage
 
 * Use the box to search by Artist, Music Genre or Theme name:
