@@ -111,8 +111,7 @@ def get_related_songs(df_scaled=df_scaled, sc=sc):
                      'armonia1':armonia, 
                      'armonia2':armonia, 
                      'armonia3':armonia, 
-                     'armonia4':armonia, 
-                     'armonia5':armonia}
+                     'armonia4':armonia}
 
     min_sim_distance = 1 / 10**penalizacion 
     
